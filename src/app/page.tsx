@@ -146,31 +146,36 @@ export default function Home() {
 
   return (
     <TooltipProvider>
-      <main className="min-h-screen flex flex-col items-center justify-center px-6 py-16 md:py-24 lg:py-32">
-        <div className="w-full max-w-[720px] flex flex-col items-center text-center">
+      <main className="min-h-screen flex flex-col items-center px-6 py-12 md:py-16 lg:py-20">
+        {/* Studio Name - Fixed at top */}
+        <header className="mb-auto pt-4 md:pt-8">
+          <h1 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-foreground uppercase">
+            Dawnforge Games
+          </h1>
+        </header>
+
+        {/* Center content */}
+        <div className="w-full max-w-[720px] flex flex-col items-center text-center my-auto">
           {/* Logo */}
           <div className="mb-6 md:mb-8">
             <Image
               src="/logo.svg"
               alt="Dawnforge gear-sun logo"
-              width={128}
-              height={128}
-              className="logo-spin w-20 h-20 md:w-28 md:h-28 lg:w-32 lg:h-32"
+              width={200}
+              height={200}
+              className="logo-spin w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48"
               priority
             />
           </div>
 
-          {/* Headline */}
-          <header className="mb-6 md:mb-8">
-            <h1 className="font-[family-name:var(--font-space-grotesk)] text-2xl md:text-4xl lg:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em] text-foreground">
+          {/* Tagline */}
+          <div className="mb-6 md:mb-8">
+            <p className="font-[family-name:var(--font-space-grotesk)] text-xl md:text-2xl lg:text-3xl font-medium leading-[1.2] tracking-[-0.01em] text-muted-foreground">
               The forge is hot.
               <br />
               Something is coming.
-            </h1>
-            <p className="mt-3 md:mt-4 text-sm md:text-base text-muted-foreground">
-              Dawnforge Games
             </p>
-          </header>
+          </div>
 
           {/* Social Links */}
           <nav aria-label="Social media links" className="mb-4 md:mb-5">
@@ -196,6 +201,9 @@ export default function Home() {
             hello@dawnforge.games
           </a>
         </div>
+
+        {/* Footer spacer to balance the header */}
+        <div className="mt-auto pt-4 md:pt-8" />
       </main>
     </TooltipProvider>
   );
