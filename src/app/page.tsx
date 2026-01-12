@@ -146,24 +146,24 @@ export default function Home() {
 
   return (
     <TooltipProvider>
-      <main className="min-h-screen flex flex-col items-center px-6 py-12 md:py-16 lg:py-20">
-        {/* Studio Name - Fixed at top */}
-        <header className="mb-auto pt-4 md:pt-8">
-          <h1 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-foreground uppercase">
-            Dawnforge Games
-          </h1>
-        </header>
+      <main className="min-h-screen flex flex-col items-center justify-center px-6 py-12 md:py-16 lg:py-20">
+        {/* Main content - vertically centered */}
+        <div className="w-full max-w-[720px] flex flex-col items-center text-center">
+          {/* Studio Name */}
+          <header className="mb-8 md:mb-10">
+            <h1 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-foreground uppercase">
+              Dawnforge Games
+            </h1>
+          </header>
 
-        {/* Center content */}
-        <div className="w-full max-w-[720px] flex flex-col items-center text-center my-auto">
           {/* Logo */}
           <div className="mb-6 md:mb-8">
             <Image
               src="/logo.svg"
               alt="Dawnforge gear-sun logo"
-              width={200}
-              height={200}
-              className="logo-spin w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48"
+              width={280}
+              height={280}
+              className="logo-spin w-44 h-44 md:w-56 md:h-56 lg:w-64 lg:h-64"
               priority
             />
           </div>
@@ -201,9 +201,6 @@ export default function Home() {
             hello@dawnforge.games
           </a>
         </div>
-
-        {/* Footer spacer to balance the header */}
-        <div className="mt-auto pt-4 md:pt-8" />
       </main>
     </TooltipProvider>
   );
