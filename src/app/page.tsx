@@ -151,25 +151,37 @@ export default function Home() {
         <div className="w-full max-w-[720px] flex flex-col items-center text-center">
           {/* Studio Name */}
           <header className="mb-8 md:mb-10">
-            <h1 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] text-foreground uppercase">
+            <h1 className="font-[family-name:var(--font-space-grotesk)] text-3xl md:text-5xl lg:text-6xl font-bold tracking-[0.05em] text-muted-foreground uppercase">
               Dawnforge Games
             </h1>
           </header>
 
           {/* Logo */}
-          <div className="mb-6 md:mb-8">
+          <div className="mb-0 relative w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 flex items-center justify-center">
+            {/* Spinning gear behind */}
             <Image
-              src="/logo.svg"
-              alt="Dawnforge gear-sun logo"
+              src="/gear.png"
+              alt=""
               width={280}
               height={280}
-              className="logo-spin w-44 h-44 md:w-56 md:h-56 lg:w-64 lg:h-64"
+              className="logo-spin absolute w-46 h-46 md:w-56 md:h-56 lg:w-80 lg:h-80"
               priority
             />
+            {/* Static mountain on top */}
+            <Image
+              src="/mountain.png"
+              alt="Dawnforge mountain logo"
+              width={280}
+              height={280}
+              className="absolute w-44 h-26 md:w-56 md:h-56 lg:w-80 lg:h-42"
+              priority
+            />
+            {/* Bottom cover to hide gear */}
+            <div className="absolute -bottom-1 md:-bottom-6 lg:-bottom-1 w-full h-20 md:h-24 lg:h-24 bg-[#141414]" />
           </div>
 
           {/* Tagline */}
-          <div className="mb-6 md:mb-8">
+          <div className="relative z-10 -mt-8 md:-mt-10 lg:-mt-12 mb-6 md:mb-8">
             <p className="font-[family-name:var(--font-space-grotesk)] text-xl md:text-2xl lg:text-3xl font-medium leading-[1.2] tracking-[-0.01em] text-muted-foreground">
               The forge is hot.
               <br />

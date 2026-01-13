@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -11,6 +12,12 @@ const spaceGrotesk = Space_Grotesk({
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const gomariceRocks = localFont({
+  src: "../fonts/gomarice_rocks.ttf",
+  variable: "--font-gomarice-rocks",
   display: "swap",
 });
 
@@ -40,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${spaceGrotesk.variable} ${inter.variable} font-sans antialiased`}
+        className={`${spaceGrotesk.variable} ${inter.variable} ${gomariceRocks.variable} font-sans antialiased`}
       >
         {children}
       </body>
